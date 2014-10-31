@@ -28,7 +28,7 @@
                 <ul class="site-nav inline-block-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#download">Download</a></li>
-                    <li><a href="#example">Example</a></li>
+                    <li><a href="#help">Getting started</a></li>
                     <li><a href="#about">About</a></li>
                 </ul>
             </div>
@@ -91,27 +91,48 @@
             </div>
         </div>
 
-        <div id="example" class="site-section site-section-video">
-            <h2>Example</h2>
+        <div id="help" class="site-section site-section-example">
+            
             <div class="content">
+                <p>
+                    <h2>Using the standalone application</h2>
+                    The standalone application uses a command line interface (CLI) instead of a graphical user interface. Usage requires basic knowledge of your operating systems terminal enviroment.
+                    <ol>
+                        <li> <a href="#download">Download</a> the Segmentation Tool </li>
+                        <li> Unzip the downloaded archive into a folder</li>
+                        <li> Start a terminal and navigate to the unziped folder</li>
+                        <li> Perform a graph-cut segmentation on the included data:
+                    </ol>
+                    <div class="code-snippet">
+                        <pre>
+$ ./GraphCutSegmentation data/input.mhd data/foreground.mhd data/background.mhd data/output.mhd 50 0 1 </pre>
+                    </div>
+                    You can get additional information about the usage of the program by typing:
+                    <div class="code-snippet">
+                        <pre>
+$ ./GraphCutSegmentation --help
+
+Required: image foreground background output sigma boundaryDirection lambda
+image:               3D image in Hounsfield Units -1024 to 3071
+foreground:          3D image non-zero pixels indicating foreground and 0 elsewhere
+background:          3D image non-zero pixels indicating background and 0 elsewhere
+output:              3D image resulting segmentation
+sigma:               estimated noise in boundary term, try 50.0
+boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to bright
+lambda:              Weight for region term, try 0.1</pre>
+                    </div>
+                    
+                </p>
+
+                <h2>Video tutorial for the MITK plugin</h2>
                 <div class="flex-embed">
-<<<<<<< HEAD
-                    <a href="https://www.youtube.com/embed/WkLO-q2wC80?autoplay=1&amp;vq=hd720"
-                        data-ga-category="Outbound links"
-                        data-ga-action="Watch video"
-                        data-ga-label="Introduction to HTML5 Boilerplate v4.0">
-                        <img src="http://i.ytimg.com/vi/WkLO-q2wC80/hqdefault.jpg" width="480" height="360" alt="video thumbnail">
-=======
                     <a href="https://www.youtube.com/embed/faJx8ikHJAo?autoplay=1&amp;vq=hd720"
                         data-ga-category="Outbound links"
                         data-ga-action="Watch video"
                         data-ga-label="Introduction to HTML5 Boilerplate v4.0">
-                        
->>>>>>> gh-pages
                         <div class="play-btn"></div>
                     </a>
                 </div>
-                
             </div>
         </div>
 

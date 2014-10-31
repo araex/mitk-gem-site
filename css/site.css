@@ -2,6 +2,30 @@
    Major site components
    ========================================================================== */
 
+
+/*
+ * Code block
+ */
+
+.code-snippet{
+    background-color: #fff;
+    overflow:auto;
+    width:auto;
+    border: solid #109cff;
+    border-width:.1em .1em .1em .8em;
+    padding:.2em .6em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.code-snippet pre{
+    color: #2f3135;
+    text-align: left;
+    margin: 0; 
+    font-size: 0.8em;
+    line-height: 125%
+}
+
 /*
  * Site header
  */
@@ -95,7 +119,7 @@
     padding: 2em 0 6em;
 }
 
-.site-section-video {
+.site-section-example {
     background-color: transparent;
     color: #fff;
     text-align: center;
@@ -103,14 +127,18 @@
 }
 
 
-.site-section-video .content {
+.site-section-example .content {
     max-width: 720px;
     margin: auto;
     padding: 10px;
 }
 
-.site-section-video h2 {
+.site-section-example h2 {
     margin: 1em 0;
+}
+
+.site-section-example h3 {
+    color: #fff;
 }
 
 
