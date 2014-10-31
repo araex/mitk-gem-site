@@ -12,12 +12,8 @@
         margin: 0 0.5em;
     }
 
-    .site-header {
-        padding-top: 40px;
-    }
-
     .site-promo {
-        padding: 3em 0;
+        padding: 6em 0;
     }
 
     .site-section {
@@ -49,5 +45,9 @@
 
     html {
         font-size: 13px;
+    }
+
+    .site-promo {
+        padding: 8em 0;
     }
 }
