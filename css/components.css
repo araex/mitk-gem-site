@@ -37,14 +37,25 @@
     vertical-align: top;
 }
 
+.infobox {
+    color: #fff;
+    background-color: #109cff;
+    margin: 0em;
+    padding: 0.6em 0.8em;
+}
+
+.infobox a{
+    color: #2f3135;
+}
+
 blockquote {
     text-align: justify;
     background-color: #eeeeee;
     border-left: 10px solid #444;
     margin: 0.75em 0em;
     padding: 0.5em;
-    quotes: "\201C""\201D""\2018""\2019";
 }
+
 blockquote:before {
     color: #444;
     content: open-quote;
@@ -55,6 +66,24 @@ blockquote:before {
 }
 blockquote p {
     display: inline;
+}
+
+blockquote .title{
+    display: inline;
+    margin-bottom: 1.0em;
+    font-size: 1.0em;
+}
+
+blockquote .authors{
+    display: inline-block;
+    margin: 1.0em 0em 0em 0em;
+    font-size: 0.8em;
+}
+
+blockquote ol{
+    display: inline-block;
+    margin: 0.5em 0em 0em 0em;
+    font-size: 0.8em;
 }
 
 

@@ -68,6 +68,16 @@ h3 {
     margin: 1em 0 0.5em;
 }
 
+h4 {
+    color: #555;
+    font-size: 1.0em;
+    margin: 0.5em 0 0.25em;
+}
+
 p {
     margin: 0 0 2em;
+}
+
+.justify-text {
+    text-align: justify;
 }
