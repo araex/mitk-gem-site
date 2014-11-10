@@ -37,6 +37,37 @@
     vertical-align: top;
 }
 
+blockquote {
+    text-align: justify;
+    background-color: #eeeeee;
+    border-left: 10px solid #444;
+    margin: 0.75em 0em;
+    padding: 0.5em;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+    color: #444;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+blockquote p {
+    display: inline;
+}
+
+
+.info {
+    color: #fff;
+    font-size: 1.0em;
+    padding: 0.6em 0.8em;
+    width: 75%;
+    vertical-align: middle;
+    margin: auto;
+    background-color: #444;
+}
+
 
 .btn {
     color: #fff;
@@ -113,28 +144,4 @@
 
 .symbol {
     color: #109cff;
-}
-
-
-/*
- * Logo's sprite
- */
-
-.sprite {
-    background: url('../img/logos-sprite.png') no-repeat;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-}
-
-.sprite-github-logo {
-    background-position: -5px -5px;
-}
-
-.sprite-html5-logo {
-    background-position: -5px -31px;
-}
-
-.sprite-stackoverflow-logo {
-    background-position: -5px -57px;
 }
