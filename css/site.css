@@ -114,14 +114,13 @@
     background-color: #f9f9f9;
     color: #333;
     overflow: hidden;
-    padding: 2em 0 6em;
+    padding-bottom: 4em;
 }
 
 .site-section-example {
     background-color: transparent;
     color: #fff;
     text-align: center;
-    padding: 2em 0 3em;
 }
 
 
@@ -138,7 +137,6 @@
 .site-section-example h3 {
     color: #fff;
 }
-
 
 .in-the-wild {
     font-size: 1.25em;

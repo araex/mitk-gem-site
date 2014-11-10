@@ -37,6 +37,10 @@
     vertical-align: top;
 }
 
+.download-links {
+    margin-top: 0.5em;
+}
+
 .infobox {
     color: #fff;
     background-color: #109cff;

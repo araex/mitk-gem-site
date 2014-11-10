@@ -30,11 +30,19 @@
     .site-footer {
         font-size: 1em;
     }
+
+    a.anchor{
+        top: -65px; 
+    }
 }
 
 @media only screen and (max-width: 460px) {
     .grid-cell {
         width: 100%;
+    }
+
+    a.anchor{
+        top: -80px; 
     }
 }
 
@@ -49,5 +57,9 @@
 
     .site-promo {
         padding: 8em 0;
+    }
+
+    a.anchor{
+        top: -100px; 
     }
 }
