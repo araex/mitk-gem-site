@@ -73,6 +73,10 @@
     position: relative;
 }
 
+.flex-embed video {
+    width: 100%;
+}
+
 .flex-embed a, /* required by IE 6/7 */
 .flex-embed iframe,
 .flex-embed img,
