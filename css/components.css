@@ -44,7 +44,7 @@
 .infobox {
     color: #fff;
     background-color: #109cff;
-    margin: 0em;
+    margin: 1em 0em;
     padding: 0.6em 0.8em;
 }
 
@@ -60,14 +60,6 @@ blockquote {
     padding: 0.5em;
 }
 
-blockquote:before {
-    color: #444;
-    content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-}
 blockquote p {
     display: inline;
 }
