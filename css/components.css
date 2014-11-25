@@ -2,6 +2,16 @@
    Reusable components
    ========================================================================== */
 
+
+.icon{
+    height: 1.3em;
+    width: 1.3em;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    background-color: #e3e3e3;
+}
 /*
  * Container
  *

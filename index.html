@@ -7,6 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700">
 
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/lightbox.min.js"></script>
+
         <!-- build:css css/main.css -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/base.css">
@@ -15,7 +18,8 @@
         <link rel="stylesheet" href="css/site.css">
         <link rel="stylesheet" href="css/mq.css">
         <link rel="stylesheet" href="css/print.css">
-        <link rel="stylesheet" href="css/font-awesome-4.2.0/css/font-awesome.min.css"
+        <link rel="stylesheet" href="css/font-awesome-4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/lightbox.css"/>
         <!-- endbuild -->
 
     </head>
@@ -120,12 +124,30 @@
                          <p class="no-video">To view this video, please install a browser that <a href="http://caniuse.com/#feat=video">supports HTML5 video.</a></p>
                         </video>
                     </div>
+                    <ol class="justify-text">
+                        <li>Open the image you want to segment.</li>
+                        <li>Switch to the Segmentation Plugin<span><img class="icon" src="img/segmentation.png"></span>and create a new mask for the background.</li>
+                        <li>Pick the Paint Tool and set a brush size. </li>
+                        <li>Mark the area that you consider background. Doing this on one slice should be sufficient.</li>
+                        <li>Repeat for foreground.</li>
+                        <li>Switch to the GraphCut3D Plugin<span><img class="icon" src="img/graphcut.png"></span>.</li>
+                        <li>Check that all images are set correctly and adjust the parameters to your needs.</li>
+                        <li>Click the 'Start' button and wait for it to finish.</li>
+                        <li>Once finished, a new segmentation called 'graphcut segmentation' will appear in the Data Manager <span><img class="icon" src="img/datamanager.png"></span>. Right click it to save or create a polygon mesh.</li>
+                    </ol>
+                </article>
+
+                <article>
+                    <h2>Screenshots</h2>
+                        <a href="img/Screenshot_full.png" data-lightbox="Screenshot_full" data-title="Overview">
+                            <img src="img/Screenshot_small.png">
+                        </a>
                 </article>
 
                 <article>
                     <h2>Using the standalone application</h2>
                     <p> The standalone application uses a command line interface (CLI) instead of a graphical user interface. Usage requires basic knowledge of your operating systems terminal enviroment.</p>
-                        <ol>
+                        <ol class="justify-text">
                             <li> <a href="#download">Download</a> the Segmentation Tool </li>
                             <li> Unzip the downloaded archive into a folder</li>
                             <li> Start a terminal and navigate to the unziped folder</li>
