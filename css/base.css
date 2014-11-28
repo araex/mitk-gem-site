@@ -80,6 +80,10 @@ p {
     margin: 0 0 1em;
 }
 
+li {
+    margin: 0.2em;
+}
+
 .justify-text {
     text-align: justify;
 }

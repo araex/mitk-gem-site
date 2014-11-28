@@ -1,7 +1,93 @@
 /* ==========================================================================
    Major site components
    ========================================================================== */
+/*
+ * FAQ section
+ */
+ .faq {
+    position: relative;
+    margin-bottom: 0.5em;
+ }
 
+.faq-content {
+    font-size: 1.0em;
+    display: none;
+    text-align: justify;
+    padding-left: 12px;
+    padding-right: 32px;
+    color: #aaa;
+    margin: 0;
+}
+
+.faq-content p {
+    font-size: 1.0em;
+    margin: 0;
+}
+
+.faq input {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    display: none;
+    margin: 0;
+    width: 100%;
+    height: 32px;
+}
+
+.faq input[type=checkbox]:checked~.faq-content {
+    display: block;
+    font-size: 1em;
+    border-left: 10px solid #109cff;
+}
+
+.faq input[type=checkbox]:checked~label{
+    border-color: #109cff;      
+}
+
+.faq label {
+    cursor: pointer;
+    text-align: left;
+    font-size: 1em;
+    display: block;
+    position: relative;
+    padding: .2em 12px;
+    padding-right: 32px;
+    border-left: 10px solid #444;
+    transition: all .25s ease-out;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.faq label:hover{
+    border-color: #109cff;
+}
+
+/* arrow */
+.faq label::before{
+    content: '';
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    margin-top: -6px;
+    border: 6px solid transparent;
+    border-left-color: inherit; 
+}
+
+/* update the arrow*/
+.faq input[type=checkbox]:checked~label::before{
+    border: 6px solid transparent;
+    border-top-color: inherit;
+    margin-top: -3px;
+    right: 10px;    
+}
 
 /*
  * Code block
