@@ -126,14 +126,14 @@
                     </div>
                     <ol class="justify-text">
                         <li>Open the image you want to segment.</li>
-                        <li>Switch to the Segmentation Plugin<span><img class="icon" src="img/segmentation.png"></span>and create a new mask for the background.</li>
+                        <li>Switch to the Segmentation Plugin<span><img class="icon" src="img/segmentation.png" alt="Icon Segmentation Plugin"></span>and create a new mask for the background.</li>
                         <li>Pick the Paint Tool and set a brush size. </li>
                         <li>Mark the area that you consider background. Doing this on one slice should be sufficient.</li>
                         <li>Repeat for foreground.</li>
-                        <li>Switch to the GraphCut3D Plugin<span><img class="icon" src="img/graphcut.png"></span>.</li>
+                        <li>Switch to the GraphCut3D Plugin<span><img class="icon" src="img/graphcut.png" alt="Icon GraphCut Plugin"></span>.</li>
                         <li>Check that all images are set correctly and adjust the parameters to your needs.</li>
                         <li>Click the 'Start' button and wait for it to finish.</li>
-                        <li>Once finished, a new segmentation called 'graphcut segmentation' will appear in the Data Manager <span><img class="icon" src="img/datamanager.png"></span>. Right click it to save or create a polygon mesh.</li>
+                        <li>Once finished, a new segmentation called 'graphcut segmentation' will appear in the Data Manager <span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. Right click it to save or create a polygon mesh.</li>
                     </ol>
                 </article>
 
@@ -166,8 +166,8 @@
                         <div class="faq-content">
                         <p>Not having enough memory will increase the computation time drastically and can even result in a crash of the application. Options at this point are: </p>
                             <ul>
-                                <li>Crop the image to only contain the region of interest with the included image cropper plugin<span><img class="icon" src="img/crop.png"></span>.</li>
-                                <li>Downsample the image using the included resample plugin<span><img class="icon" src="img/resample.png"></span>.</li>
+                                <li>Crop the image to only contain the region of interest with the included image cropper plugin<span><img class="icon" src="img/crop.png" alt="Icon Crop Plugin"></span>.</li>
+                                <li>Downsample the image using the included resample plugin<span><img class="icon" src="img/resample.png" alt="Icon Resample Plugin"></span>.</li>
                                 <li>Create all the masks in the MITK Workbench and save them to your harddisk, then use the Command Line Segmentation Tool to do the computation. The CLI Tool is more memory efficient and is able to complete computations that the plugin can not. However, the computation times will still be very long. </li>
                             </ul>
                         </div>
@@ -235,9 +235,9 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
                         <input type="checkbox" id="q10">
                         <label for="q10">I can't see those sidebars shown in the video.</label>
                         <div class="faq-content">
-                            <p>You have to open the plugins by clicking on their icons: <img class="icon" src="img/graphcut.png"> and <img class="icon" src="img/segmentation.png">.</p>
+                            <p>You have to open the plugins by clicking on their icons: <img class="icon" src="img/graphcut.png" alt="Icon GraphCut Plugin"> and <img class="icon" src="img/segmentation.png" alt="Icon Segmentation Plugin">.</p>
                             <a href="img/Screenshot_full.png" data-lightbox="Screenshot_full" data-title="Overview">
-                                <img src="img/Screenshot_small.png">
+                                <img src="img/Screenshot_small.png" alt="Workbench overview">
                             </a>
                         </div>
                     </div>
