@@ -1,1 +1,1 @@
-https://github.engineering.zhaw.ch/pages/VisualComputingLab/GraphCutWebsite/
+http://araex.github.io/mitk-gem-site/
