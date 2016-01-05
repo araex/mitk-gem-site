@@ -15,7 +15,7 @@
     text-align: justify;
     padding-left: 12px;
     padding-right: 32px;
-    color: #aaa;
+    color: #000;
     margin: 0;
 }
 
@@ -43,8 +43,13 @@
     border-left: 10px solid #4caf50;
 }
 
+.faq input[type=checkbox]:checked~label {
+    color: #4caf50;
+    font-weight: bold;
+}
+
 .faq input[type=checkbox]:checked~label{
-    border-color: #4caf50;      
+    border-color: #4caf50;
 }
 
 .faq label {
@@ -78,7 +83,7 @@
     top: 50%;
     margin-top: -6px;
     border: 6px solid transparent;
-    border-left-color: inherit; 
+    border-left-color: inherit;
 }
 
 /* update the arrow*/
@@ -86,7 +91,7 @@
     border: 6px solid transparent;
     border-top-color: inherit;
     margin-top: -3px;
-    right: 10px;    
+    right: 10px;
 }
 
 /*
@@ -107,7 +112,7 @@
 .code-snippet pre{
     color: #4caf50;
     text-align: left;
-    margin: 0; 
+    margin: 0;
     font-size: 0.8em;
     line-height: 125%
 }
@@ -129,7 +134,7 @@
     margin: 0 auto;
 
     padding: 15px 15px;
-    max-width: 760px;   
+    max-width: 760px;
 }
 
 /*
