@@ -78,7 +78,7 @@
                 <article>
                     <h2>Application overview</h2>
                     <p>
-                        <a href="img/Overview.jpg" data-lightbox="Screenshot_full" data-title="Overview">
+                        <a href="img/Overview.jpg" data-lightbox="overview" data-title="Overview">
                             <img src="img/Overview.png" alt="Workbench overview">
                         </a>
                         <ol class="justify-text">
@@ -113,26 +113,65 @@
                         <li>Switch to the GraphCut3D Plugin<span><img class="icon" src="img/graphcut.png" alt="Icon GraphCut Plugin"></span>.</li>
                         <li>Check that all images are set correctly and adjust the parameters to your needs.</li>
                         <li>Click the 'Start' button and wait for it to finish.</li>
-                        <li>Once finished, a new segmentation called 'graphcut segmentation' will appear in the Data Manager <span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. You can right click it to save it on your disk or proceed with the surface mesh generation.</li>
+                        <li>Once finished, a new segmentation called 'graphcut segmentation' will appear in the Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. You can right click it to save it on your disk or proceed with the surface mesh generation.</li>
                     </ol>
                 </article>
 
                 <a class="anchor" id="surfacemesh"></a>
                 <article>
                     <h2>Tutorial: Surface mesh generation</h2>
+                    <p>
+                      <a href="img/screen_voxel2mesh.png" data-lightbox="tutorial" data-title="Tutorial">
+                          <img src="img/screen_voxel2mesh.png" alt="Screenshot surface mesh plugin" style="max-width: 423px">
+                      </a>
+                      <ol class="justify-text">
+                        <li>Select a mask in the Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. A mask is a binary image with background values of 0, for example the output of the GraphCut3D Plugin<span><img class="icon" src="img/graphcut.png" alt="Icon GraphCut Plugin"></span>.</li>
+                        <li>The mask will get passed down through all the steps represented by the group boxes: Median filter -> Gaussian smoothing -> Marching cubes -> Polygon smoothing. You can enable or disable a step by clicking the checkbox next to its title. </li>
+                        <li>Adjust the settings to match your requirements. The default settings should give accurate results in most cases.</li>
+                        <li>After pressing the "Generate surface" button, the mask will get processed and the resulting surface will be added to your Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>.
+                      </ol>
+                    </p>
                 </article>
 
                 <a class="anchor" id="volumemesh"></a>
                 <article>
                     <h2>Tutorial: Tetrahedral mesh generation</h2>
+                    <h1 class="hiColor">TODO: add content</h1>
                 </article>
 
                 <a class="anchor" id="materialmapping"></a>
                 <article>
                     <h2>Tutorial: Material mapping</h2>
+                    <a href="img/screen_calibration.png" data-lightbox="tutorial" data-title="Tutorial">
+                        <img src="img/screen_calibration.png" alt="Screenshot bone density calibration" style="max-width: 547px">
+                    </a>
+                    <ol class="justify-text">
+                      <li>Load an unstructured grid and a grayscale image and select them with the combo boxes.</li>
+                      <li>Enter the bone density calibration values for your phantom into the table. The calibration unit can be set using the dropdown box.
+                        <br/>If you already know your equation for Bone density &rho;, you can disable the calibration using the "Phantom calibration for &rho;_ct" checkbox and enter it directly below.</li>
+                        <li>Note that after the calibration <span class="hiColor">all steps will use gHA/cm³ regardless of your chosen calibration unit!</span> Conversion happens automatically if necessary.</li>
+                    </ol>
+
+                    <a href="img/screen_calibration2.png" data-lightbox="tutorial" data-title="Tutorial">
+                        <img src="img/screen_calibration2.png" alt="Screenshot bone density calibration 2" style="max-width: 547px">
+                    </a>
+                    <ol class="justify-text">
+                      <li value="4">A linear equation for bone density &rho; will get fitted to your calibration using a least squares fitting technique. </li>
+                      <li>The final bone density value &rho; used for further steps is evaluated in 3 steps. For more information refer to <a href="#">TODO: ADD PAPER HERE</a></li>
+                    </ol>
+
+                    <a href="img/screen_calibration3.png" data-lightbox="tutorial" data-title="Tutorial">
+                        <img src="img/screen_calibration3.png" alt="Screenshot bone density calibration 3" style="max-width: 543px">
+                    </a>
+                    <ol class="justify-text">
+                      <li value="6">Specify the power laws that should be applied to your bone density.</li>
+                      <li>Using the "add" button, you can add additional power laws with a corresponding interval.</li>
+                      <li>Press the "Start" button to start the material mapping. The resulting unstructured grid will have an additional point and cell array containing the material properties.</li>
+                    </ol>
+                    <h1 class="hiColor">TODO: better explanation</h1>
                 </article>
 
-                
+
             </div>
         </div> <!-- end section-tutorial -->
 
@@ -141,6 +180,7 @@
             <div class="container">
                 <article>
                     <h2>Frequently Asked Questions</h2>
+                    <h1 class="hiColor">TODO: currently only graphcut content</h1>
                     <div class="faq">
                         <input type="checkbox" id="q1">
                         <label for="q1">Can i use this tool for diagnosis and treatment?</label>
@@ -253,6 +293,7 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
             <div class="container">
                 <article>
                     <h2>About</h2>
+                    <h1 class="hiColor">TODO: add content or link to simtk?</h1>
                     <p class="justify-text">
                         This tool was developed for a paper comparing interactive graph cut image segmenation with manual segmentation for creation of femur finite element models. The paper was submitted to CMBBE in November 2014.
                     </p>
