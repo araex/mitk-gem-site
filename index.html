@@ -94,9 +94,11 @@
         <a class="anchor" id="tutorial"></a>
         <div class="site-section site-section-example">
             <div class="container">
+                <h1>Tutorials</h1>
                 <a class="anchor" id="graphcut"></a>
                 <article>
-                    <h2>Tutorial: Graphcut segmentation</h2>
+                  <h2>Graphcut segmentation</h2>
+                  <p>
                     <div class="flex-embed">
                         <video id="mitk_howto" controls preload="auto" poster="video/thumbnail.png" data-setup="{}">
                          <source src="video/MITKGraphCutSegmentationDemo_v2.mp4">
@@ -115,17 +117,20 @@
                         <li>Click the 'Start' button and wait for it to finish.</li>
                         <li>Once finished, a new segmentation called 'graphcut segmentation' will appear in the Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. You can right click it to save it on your disk or proceed with the surface mesh generation.</li>
                     </ol>
+                  </p>
                 </article>
 
                 <a class="anchor" id="surfacemesh"></a>
                 <article>
-                    <h2>Tutorial: Surface mesh generation</h2>
+                    <h2>Surface mesh generation</h2>
                     <p>
+                      <p class="justify-text">The Surface Mesher allows the conversion of binary masks to surface meshes using a marching cubes algorithm. A binary mask is an image with background values of 0 and foreground values of 255.
+                      </p>
                       <a href="img/screen_voxel2mesh.png" data-lightbox="tutorial" data-title="Tutorial">
                           <img src="img/screen_voxel2mesh.png" alt="Screenshot surface mesh plugin" style="max-width: 423px">
                       </a>
                       <ol class="justify-text">
-                        <li>Select a mask in the Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. A mask is a binary image with background values of 0, for example the output of the GraphCut3D Plugin<span><img class="icon" src="img/graphcut.png" alt="Icon GraphCut Plugin"></span>.</li>
+                        <li>Select a mask in the Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>.</li>
                         <li>The mask will get passed down through all the steps represented by the group boxes: Median filter -> Gaussian smoothing -> Marching cubes -> Polygon smoothing. You can enable or disable a step by clicking the checkbox next to its title. </li>
                         <li>Adjust the settings to match your requirements. The default settings should give accurate results in most cases.</li>
                         <li>After pressing the "Generate surface" button, the mask will get processed and the resulting surface will be added to your Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>.
@@ -135,18 +140,32 @@
 
                 <a class="anchor" id="volumemesh"></a>
                 <article>
-                    <h2>Tutorial: Tetrahedral mesh generation</h2>
-                    <h1 class="hiColor">TODO: add content</h1>
+                  <h2>Tetrahedral mesh generation</h2>
+                  <p>
+                    <p class="justify-text">Using the Volume Mesher plugin, you can create tetrahedral meshes from surfaces. The meshing is done by the tool <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>. The results are represented as unstructured grids (.vtu). Visualization of unstructured grids is currently disabled, to inspect the results, use a tool such as <a href="http://www.paraview.org/" class="extA">paraview</a>.
+                    </p>
+                    <a href="img/screen_volumemesh.png" data-lightbox="tutorial" data-title="Tutorial">
+                        <img src="img/screen_volumemesh.png" alt="Screenshot volume mesh generation" style="max-width: 534px">
+                    </a>
+                    <ol class="justify-text">
+                      <li>Load a surface mesh and select it with the drop down box.</li>
+                      <li>Since the volume mesher is a front end to <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>, so the settings directly correspond to the ones available in tetgen.</li>
+                      <li>Press "Generate tetrahedral mesh" to start the process. The resulting unstructured grid will be stored in the Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. </li>
+                    </ol>
+                  </p>
                 </article>
 
                 <a class="anchor" id="materialmapping"></a>
                 <article>
-                    <h2>Tutorial: Material mapping</h2>
+                  <h2>Material mapping</h2>
+                  <p>
+                    <p class="justify-text"><h2 class="hiColor">TODO: add description</h2>
+                    </p>
                     <a href="img/screen_calibration.png" data-lightbox="tutorial" data-title="Tutorial">
                         <img src="img/screen_calibration.png" alt="Screenshot bone density calibration" style="max-width: 547px">
                     </a>
                     <ol class="justify-text">
-                      <li>Load an unstructured grid and a grayscale image and select them with the combo boxes.</li>
+                      <li>Load an unstructured grid and a grayscale image and select them with the drop down boxes.</li>
                       <li>Enter the bone density calibration values for your phantom into the table. The calibration unit can be set using the dropdown box.
                         <br/>If you already know your equation for Bone density &rho;, you can disable the calibration using the "Phantom calibration for &rho;_ct" checkbox and enter it directly below.</li>
                         <li>Note that after the calibration <span class="hiColor">all steps will use gHA/cm³ regardless of your chosen calibration unit!</span> Conversion happens automatically if necessary.</li>
@@ -169,6 +188,7 @@
                       <li>Press the "Start" button to start the material mapping. The resulting unstructured grid will have an additional point and cell array containing the material properties.</li>
                     </ol>
                     <h1 class="hiColor">TODO: better explanation</h1>
+                  </p>
                 </article>
 
 
@@ -323,11 +343,11 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
                 </article>
             </div>
         </div> <!-- end section-about -->
-        <div class="site-footer" role="contentinfo">
+        <!-- <div class="site-footer" role="contentinfo">
                 <p>
                     A project developed by the <a href="http://init.zhaw.ch/en/engineering/institutes-centres/institute-of-applied-information-technology/research-and-development/human-information-interaction/visual-computing-lab.html" class="hiColor">Visual Computing Lab</a> at the <a href="http://www.zhaw.ch/en.html" class="hiColor">Zurich University of Applied Sciences</a>.
                 </p>
-        </div>
+        </div> -->
 
     </body>
 </html>
