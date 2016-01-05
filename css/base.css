@@ -13,9 +13,36 @@ body {
     background-image: url('../img/bg.png');
 }
 
+.hiColor {
+    color: #4caf50;
+}
+
+.white {
+    color: #fff;
+}
+
 a {
-    color: #109cff;
+    color: #4caf50;
     text-decoration: none;
+}
+
+.extA {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.extA:after {
+    font-family: FontAwesome;
+    content: "\f08e";
+    display: inline-block;
+    padding-left: 5px;
+    margin-bottom: 6px;
+    font-size: 75%;
+    vertical-align: middle;
+}
+
+ul a {
+    color: #333;
 }
 
 a:hover,
@@ -30,12 +57,12 @@ a:active {
  */
 
 ::-moz-selection {
-    background-color: #b3d4fc;
+    background-color: #a5d6a7;
     text-shadow: none;
 }
 
 ::selection {
-    background-color: #b3d4fc;
+    background-color: #a5d6a7;
     text-shadow: none;
 }
 

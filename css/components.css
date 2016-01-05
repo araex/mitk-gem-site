@@ -132,18 +132,18 @@ blockquote ol{
  */
 
 .btn-download {
-    background-color: #0e65a5;
-    background-image: linear-gradient(#0c84d9 10%, #0a5388 100%);
+    background-color: #2e7d32;
+    background-image: linear-gradient(#4caf50 10%, #2e7d32 100%);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
                 0 1px 3px rgba(0, 0, 0, 0.2);
-    border: 1px solid #084673;
+    border: 1px solid #2e7d32;
 }
 
 .btn-download:hover,
 .btn-download:focus,
 .btn-download:active {
-    background-color: #0e65a5;
-    background-image: linear-gradient(#109cff 10%, #0e65a5 100%);
+    background-color: #4caf50;
+    background-image: linear-gradient(#66bb6a 10%, #43a047 100%);
 }
 
 .btn-download:active {
@@ -173,12 +173,4 @@ blockquote ol{
 
 .btn-download-alt:active {
     background-color: #3f3f3f;
-}
-
-/*
- * Symbol
- */
-
-.symbol {
-    color: #109cff;
 }

@@ -2,8 +2,8 @@
 <html lang="en-us">
     <head>
         <meta charset="utf-8">
-        <title>Interactive Graph-Cut Segmentation</title>
-        <meta name="description" content="Interactive Graph-Cut Segmentation for Fast Creation of Finite Element Models from Clinical CT Data for Hip Fracture Prediction.">
+        <title>MITK-GEM</title>
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/ico" href="favicon.ico">
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700">
@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="css/site.css">
         <link rel="stylesheet" href="css/mq.css">
         <link rel="stylesheet" href="css/print.css">
-        <link rel="stylesheet" href="css/font-awesome-4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/font-awesome-4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/lightbox.css"/>
         <!-- endbuild -->
 
@@ -28,13 +28,13 @@
         <div class="site-header-container">
             <div class="site-header clearfix" role="banner">
                 <div class="site-logo">
-                    Graph <span class="symbol">&#x260a;</span> Cut 3D
+                    <a href="#home" class="white">MITK <i class="fa fa-diamond fa-lg hiColor"></i> GEM</a>
                 </div>
-                <ul class="site-nav inline-block-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#download">Download</a></li>
-                    <li><a href="#help">Getting started</a></li>
-                    <li><a href="#about">About</a></li>
+                <ul class="site-nav inline-block-list hiColor">
+                    <li><a href="#features" class="hiColor">Features</a></li>
+                    <li><a href="#tutorial" class="hiColor">Tutorials</a></li>
+                    <li><a href="#faq" class="hiColor">FAQ</a></li>
+                    <li><a href="#about" class="hiColor">About</a></li>
                 </ul>
             </div>
         </div><!-- end site-header -->
@@ -42,82 +42,61 @@
         <a class="anchor" id="home"></a>
         <div class="container">
             <div class="site-promo">
-                <h1>Interactive 3D Graph-Cut Segmentation</h1>
-                <p class="description">A tool for 3-dimensional segmentation of medical image data. Developed for the study "Interactive Graph-Cut Segmentation for Fast Creation of Finite Element Models from Clinical CT Data for Hip Fracture Prediction".</p>
+                <h1>MITK - <span class="hiColor">GE</span>nerate <span class="hiColor">M</span>odels</h1>
+                <p class="description">MITK-GEM is a free open-source software pipeline to generate finite element models from image data. MITK-GEM is built on top of the Medical Imaging Interaction Toolkit (MITK) Workbench.</p>
 
                 <div class="cta-option">
-                    <a class="btn btn-download" href="#download">
+                    <a class="btn btn-download" href="https://simtk.org/project/xml/downloads.xml?group_id=1063">
                         <strong><i class="fa fa-download"></i> Download</strong>
                     </a>
                 </div>
 
                 <div class="cta-option">
-                    <a class="btn btn-alt" href="https://github.engineering.zhaw.ch/VisualComputingLab/MITK_GraphCut3D">
+                    <a class="btn btn-alt" href="https://github.com/araex/mitk-gem">
                         <i class="fa fa-github"></i> Source code
                     </a>
                 </div>
             </div><!-- end site-promo -->
         </div>
 
-        <a class="anchor" id="download"></a>
+        <a class="anchor" id="features"></a>
         <div class="site-section">
             <div class="container">
                 <article>
-                    <h2>Download</h2>
-                    <p>If you are using this tool for your research, please cite the following paper:</p>
-                    <a class="anchor" id="cite-paper"></a>
-                    <blockquote>
-                    Y. Pauchard, T. Fitze, D. Browarnik, A. Eskandari, W. Enns-Bray, H. P&#225;lsson, S. Sigurdsson, Stephen J. Ferguson, Tamara B. Harris, V. Gudnason and B. Helgason. "Interactive Graph-Cut Segmentation for Fast Creation of Finite Element Models from Clinical CT Data for Hip Fracture Prediction." Computer Methods in Biomechanics and Biomedical Engineering XX, no. X (Month 201X): XX - XX. doi:
-                    </blockquote>
+                    <h2>Features</h2>
+                    <p class="justify-text">
+                    MITK-GEM implements all its features as plugins for the <a href="http://mitk.org/" class="extA">Medical Imaging Interaction Toolkit (MITK)</a> Workbench. It expands the MITK Workbench by offering a finite element model generation workflow with the following steps:
+                    </p>
+                    <ul class="justify-text">
+                        <a href="#graphcut"><li>Interactive image segmentation with 3D Graphcuts<span><img class="icon" src="img/graphcut.png" alt="Icon GraphCut Plugin"></span>.</li></a>
+                        <a href="#surfacemesh"><li>Surface mesh generation<img class="icon" src="img/voxel2mesh.png" alt="Icon GraphCut Plugin"></span>.</li></a>
+                        <a href="#volumemesh"><li>Tetrahedral mesh generation<img class="icon" src="img/volumemesh.png" alt="Icon GraphCut Plugin"></span>.</li></a>
+                        <a href="#materialmapping"><li>Highly configurable material mapping procedure<img class="icon" src="img/materialmapping.png" alt="Icon GraphCut Plugin"></span>.</li></a>
+                    </ul>
                 </article>
 
                 <article>
-                    <h3>Interactive Segmentation Tool v1.0</h3>
+                    <h2>Application overview</h2>
                     <p>
-                        Precompiled binaries of the Interactive Segmentation Tool (MITK Workbench with the all required plugins included).
-                        <div class="infobox">
-                            Download not available yet. The tool will be released early 2015.
-                        </div>
-                        <div class="download-links">
-                            <a href="bin/mitk-1.0-osx_64bit.dmg"><i class="fa fa-apple"></i> Apple OSX</a>
-                            <br/><a href="bin/mitk-1.0-win_64bit.exe"><i class="fa fa-windows"></i> Microsoft Windows</a>
-                            <br/><a href="bin/mitk-1.0-linux_64bit.tar.gz"><i class="fa fa-linux"></i> Linux</a>
-                        </div>
+                        <a href="img/overview.jpg" data-lightbox="Screenshot_full" data-title="Overview">
+                            <img src="img/overview.png" alt="Workbench overview">
+                        </a>
+                        <ol class="justify-text">
+                            <li>The Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>contains contains all loaded data (images, surfaces, meshes) as well as the results produced by the plugins. You can also save your results from here by right clicking on them and selecting save.</li>
+                            <li>The toolbar containing all available plugins. Open a plugin by clicking on it.</li>
+                            <li>The view of the currently opened plugin.</li>
+                        </ol>
                     </p>
                 </article>
-
-                <div class="grid">
-                    <div class="grid-cell">
-                        <h4>Command Line Segmentation Tool v1.0</h4>
-                        <p>
-                            Precompiled binaries of the standandlone tool are available for the following systems:
-                            <div class="download-links">
-                                <a href="bin/standalone-1.0-osx_64bit.dmg"><i class="fa fa-apple"></i> Apple OSX</a>
-                                <br/><a href="bin/standalone-1.0-win_64bit.exe"><i class="fa fa-windows"></i> Microsoft Windows</a>
-                                <br/><a href="bin/standalone-1.0-linux_64bit.tar.gz"><i class="fa fa-linux"></i> Linux</a>
-                            </div>
-                        </p>
-                    </div>
-
-                    <div class="grid-cell">
-                        <h4>Source code</h4>
-                        <p>
-                            The Interactive 3d Graph-Cut Segmentation Tool as well as the MITK plugin are open source and freely available.
-                            <div class="download-links">
-                                <a href="https://github.engineering.zhaw.ch/VisualComputingLab/MITK_GraphCut3D"><i class="fa fa-github"></i> Interactive Segmentation Tool</a>
-                                <br/><a href="https://github.engineering.zhaw.ch/VisualComputingLab/ImageGraphCut3DSegmentation"><i class="fa fa-github"></i> Command Line Segmentation Tool</a>
-                            </div>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div> <!-- end section-download -->
 
-        <a class="anchor" id="help"></a>
+        <a class="anchor" id="tutorial"></a>
         <div class="site-section site-section-example">
             <div class="container">
+                <a class="anchor" id="graphcut"></a>
                 <article>
-                    <h2>Video tutorial for the MITK plugin</h2>
+                    <h2>Tutorial: Graphcut segmentation</h2>
                     <div class="flex-embed">
                         <video id="mitk_howto" controls preload="auto" poster="video/thumbnail.png" data-setup="{}">
                          <source src="video/MITKGraphCutSegmentationDemo_v2.mp4">
@@ -134,29 +113,51 @@
                         <li>Switch to the GraphCut3D Plugin<span><img class="icon" src="img/graphcut.png" alt="Icon GraphCut Plugin"></span>.</li>
                         <li>Check that all images are set correctly and adjust the parameters to your needs.</li>
                         <li>Click the 'Start' button and wait for it to finish.</li>
-                        <li>Once finished, a new segmentation called 'graphcut segmentation' will appear in the Data Manager <span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. Right click it to save or create a polygon mesh.</li>
+                        <li>Once finished, a new segmentation called 'graphcut segmentation' will appear in the Data Manager <span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. You can right click it to save it on your disk or proceed with the surface mesh generation.</li>
                     </ol>
                 </article>
 
+                <a class="anchor" id="surfacemesh"></a>
+                <article>
+                    <h2>Tutorial: Surface mesh generation</h2>
+                </article>
+
+                <a class="anchor" id="volumemesh"></a>
+                <article>
+                    <h2>Tutorial: Tetrahedral mesh generation</h2>
+                </article>
+
+                <a class="anchor" id="materialmapping"></a>
+                <article>
+                    <h2>Tutorial: Material mapping</h2>
+                </article>
+
+                
+            </div>
+        </div> <!-- end section-tutorial -->
+
+        <a class="anchor" id="faq"></a>
+        <div class="site-section">
+            <div class="container">
                 <article>
                     <h2>Frequently Asked Questions</h2>
                     <div class="faq">
                         <input type="checkbox" id="q1">
                         <label for="q1">Can i use this tool for diagnosis and treatment?</label>
                         <div class="faq-content">
-                            <p>No, GraphCut3D is for research only.</p>
+                            <p>No, MITK-GEM is for research only.</p>
                         </div>
                     </div>
                     <div class="faq">
                         <input type="checkbox" id="q2">
                         <label for="q2">Can i use this tool for my research?</label>
                         <div class="faq-content">
-                            <p>Yes, GraphCut3D is released under the GPLv3 license and you may use it under these terms. If you do use it, please <a href="#cite-paper">cite the paper</a>.</p>
+                            <p>Yes, MITK-GEM is released under the GPLv3 license and you may use it under these terms. If you do use it, please <a href="#cite-paper">cite the paper</a>.</p>
                         </div>
                     </div>
                     <div class="faq">
                         <input type="checkbox" id="q3">
-                        <label for="q3">What does the 'Required Memory' field mean?</label>
+                        <label for="q3">What does the 'Required Memory' field in the Graphcut3D plugin mean?</label>
                         <div class="faq-content">
                             <p>The graphcut algorithm requires large amounts of memory to build the necessary graph. This field tells you exactly how much memory the graph and the image data will allocate. It is highly recommended that you have at least this much free memory before starting the computation. If you do not have enough memory, see FAQ Section "I have less memory than 'Required memory'" for workarounds. </p>
                         </div>
@@ -175,14 +176,14 @@
                     </div>
                     <div class="faq">
                         <input type="checkbox" id="q5">
-                        <label for="q5">The plugin takes very long for its computation.</label>
+                        <label for="q5">The Graphcut3D plugin takes very long for its computation.</label>
                         <div class="faq-content">
                             <p>The 'estimated time' is based on test results on one of our machines. Depending on your hardware, your results may vary. Especially if your machine is not able to store the complete graph in memory, the computation time will increase dramatically.</p>
                         </div>
                     </div>
                     <div class="faq">
                         <input type="checkbox" id="q6">
-                        <label for="q6">The application crashes when i click 'Start'.</label>
+                        <label for="q6">The application crashes when i click 'Start' in the Graphcut3D plugin.</label>
                         <div class="faq-content">
                             <p>This is a problem when the plugin tries to allocate more memory than your machine can handle. Please refer to the FAQ section "I have less memory than 'Required memory'" for information on how to decrease the memory usage.</p>
                         </div>
@@ -193,7 +194,7 @@
                         <div class="faq-content">
                             <p> The standalone application uses a command line interface (CLI) instead of a graphical user interface. Usage requires basic knowledge of your operating systems terminal enviroment.</p>
                         <ol class="justify-text">
-                            <li> <a href="#download">Download</a> the Segmentation Tool </li>
+                            <li> <a href="#home">Download</a> the Segmentation Tool </li>
                             <li> Unzip the downloaded archive into a folder</li>
                             <li> Start a terminal and navigate to the unziped folder</li>
                             <li> Perform a graph-cut segmentation on the included data: </li>
@@ -222,7 +223,7 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
                         <input type="checkbox" id="q8">
                         <label for="q8">I have problems building the application from the source code.</label>
                         <div class="faq-content">
-                            <p>There's a seperate FAQ for building over <a href="https://github.engineering.zhaw.ch/VisualComputingLab/MITK_GraphCut3D">here</a>.</p>
+                            <p>There's a seperate FAQ for building over <a href="https://github.com/araex/mitk-gem/blob/master/README.md">here</a>.</p>
                         </div>
                     </div>
                     <div class="faq">
@@ -234,7 +235,7 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
                     </div>
                     <div class="faq">
                         <input type="checkbox" id="q10">
-                        <label for="q10">I can't see those sidebars shown in the video.</label>
+                        <label for="q10">I can't see those sidebars shown in the screenshots and videos.</label>
                         <div class="faq-content">
                             <p>You have to open the plugins by clicking on their icons: <img class="icon" src="img/graphcut.png" alt="Icon GraphCut Plugin"> and <img class="icon" src="img/segmentation.png" alt="Icon Segmentation Plugin">.</p>
                             <a href="img/Screenshot_full.png" data-lightbox="Screenshot_full" data-title="Overview">
@@ -245,10 +246,10 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
 
                 </article>
             </div>
-        </div> <!-- end section-example -->
+        </div> <!-- end section-faq -->
 
         <a class="anchor" id="about"></a>
-        <div class="site-section">
+        <div class="site-section site-section-example">
             <div class="container">
                 <article>
                     <h2>About</h2>
@@ -283,7 +284,7 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
         </div> <!-- end section-about -->
         <div class="site-footer" role="contentinfo">
                 <p>
-                    A project developed by the <a href="http://init.zhaw.ch/en/engineering/institutes-centres/institute-of-applied-information-technology/research-and-development/human-information-interaction/visual-computing-lab.html">Visual Computing Lab</a> at the <a href="http://www.zhaw.ch/en.html">Zurich University of Applied Sciences</a>.
+                    A project developed by the <a href="http://init.zhaw.ch/en/engineering/institutes-centres/institute-of-applied-information-technology/research-and-development/human-information-interaction/visual-computing-lab.html" class="hiColor">Visual Computing Lab</a> at the <a href="http://www.zhaw.ch/en.html" class="hiColor">Zurich University of Applied Sciences</a>.
                 </p>
         </div>
 

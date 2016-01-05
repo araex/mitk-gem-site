@@ -40,11 +40,11 @@
 .faq input[type=checkbox]:checked~.faq-content {
     display: block;
     font-size: 1em;
-    border-left: 10px solid #109cff;
+    border-left: 10px solid #4caf50;
 }
 
 .faq input[type=checkbox]:checked~label{
-    border-color: #109cff;      
+    border-color: #4caf50;      
 }
 
 .faq label {
@@ -67,7 +67,7 @@
 }
 
 .faq label:hover{
-    border-color: #109cff;
+    border-color: #4caf50;
 }
 
 /* arrow */
@@ -97,7 +97,7 @@
     background-color: #fff;
     overflow:auto;
     width:auto;
-    border: solid #109cff;
+    border: solid #4caf50;
     border-width:.1em .1em .1em .8em;
     padding:.2em .6em;
     margin-top: 15px;
@@ -105,7 +105,7 @@
 }
 
 .code-snippet pre{
-    color: #2f3135;
+    color: #4caf50;
     text-align: left;
     margin: 0; 
     font-size: 0.8em;
@@ -159,7 +159,6 @@
 }
 
 .site-nav a {
-    color: #109cff;
     display: block;
     text-decoration: none;
     text-transform: uppercase;
@@ -237,8 +236,4 @@
 .site-footer {
     font-size: 0.875em;
     padding: 2em;
-}
-
-.site-footer a {
-    color: #109cff;
 }
