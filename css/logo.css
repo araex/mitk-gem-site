@@ -1,0 +1,38 @@
+html {
+    color: #fff;
+    font: 17px/1.4 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.hiColor {
+    color: #4caf50;
+}
+
+.lightColor {
+  -webkit-text-fill-color: #4caf50;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #43a047;
+}
+
+.darkColor {
+  color: #4caf50;
+}
+
+.site-logo {
+    float: left;
+    font-size: 250px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.light {
+  color: #333;
+  /*background-color: #c8e6c9;*/
+}
+
+.dark {
+  color: #fff;
+  background-color: #333;
+}
