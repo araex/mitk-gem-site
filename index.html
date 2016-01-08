@@ -201,7 +201,7 @@
             <div class="container">
                 <article>
                     <h2>Frequently Asked Questions</h2>
-                    <h1 class="hiColor">TODO: currently only graphcut content</h1>
+                    <h1 class="hiColor">TODO: expand</h1>
                     <div class="faq">
                         <input type="checkbox" id="q1">
                         <label for="q1">Can i use this tool for diagnosis and treatment?</label>
@@ -213,19 +213,83 @@
                         <input type="checkbox" id="q2">
                         <label for="q2">Can i use this tool for my research?</label>
                         <div class="faq-content">
-                            <p>Yes, MITK-GEM is released under the GPLv3 license and you may use it under these terms. If you do use it, please <a href="#cite-paper">cite the paper</a>.</p>
+                            <p>Yes, MITK-GEM is released under the GPLv3 license and you may use it under these terms. If you do use it, please <a href="https://simtk.org/project/xml/publications.xml/?group_id=1063">cite the paper</a>.</p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <input type="checkbox" id="q13">
+                        <label for="q13">Under what license is MITK-GEM released?</label>
+                        <div class="faq-content">
+                            <p>MITK-GEM as a tool is released under the GPLv3 license. However, the plugins are individually licensed and may be used under these conditions separately:
+                            <ul>
+                                <li>Material Mapping: BSD 3-Clause License.</li>
+                                <li>Surface Mesher: BSD 3-Clause License</li>
+                                <li>Resample Plugin: BSD 3-Clause License</li>
+                                <li>Padding Plugin: BSD 3-Clause License</li>
+                                <li>GraphCut3D: GPLv3 because of the used library <a href="https://pub.ist.ac.at/~vnk/software.html" class="extA">maxflow</a>.</li>
+                                <li>Volume Mesher: GPLv3 beaucse of the used library <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>.</li>
+                            </ul>
+                            For more details, see the LICENSE.txt in the respective plugins source code folder.
                         </div>
                     </div>
                     <div class="faq">
                         <input type="checkbox" id="q3">
-                        <label for="q3">What does the 'Required Memory' field in the Graphcut3D plugin mean?</label>
+                        <label for="q3">What is a .matmap file?</label>
+                        <div class="faq-content">
+                            <p>The material mapping plugin allows you to export the current parametrization to a .matmap file. The file uses the XML markup language and can be opened with any text editor. An example of a .matmap file is given below.</p>
+                            <div class="code-snippet">
+                                <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;MaterialMapping Version=&quot;2016.2&quot;&gt;
+    &lt;Calibration unit=&quot;mgHA/cm&#179;&quot;&gt;
+        &lt;DataPoint HU=&quot;1.79&quot; rho=&quot;0&quot; /&gt;
+        &lt;DataPoint HU=&quot;88.200000000000003&quot; rho=&quot;75&quot; /&gt;
+        &lt;DataPoint HU=&quot;174.360000000000014&quot; rho=&quot;150&quot; /&gt;
+    &lt;/Calibration&gt;
+    &lt;BoneDensityParameters&gt;
+        &lt;RhoCT AutomaticFit=&quot;1&quot; slope=&quot;0&quot; offset=&quot;0&quot; /&gt;
+        &lt;RhoAsh enabled=&quot;1&quot; offset=&quot;0&quot; divisor=&quot;1&quot; /&gt;
+        &lt;RhoApp enabled=&quot;1&quot; divisor=&quot;0&quot; /&gt;
+    &lt;/BoneDensityParameters&gt;
+    &lt;PowerLaws&gt;
+        &lt;PowerLawParameters factor=&quot;1&quot; exponent=&quot;1&quot; offset=&quot;0&quot; rangeMin=&quot;-3.40282346638529e+38&quot; rangeMax=&quot;0&quot; /&gt;
+        &lt;PowerLawParameters factor=&quot;6850&quot; exponent=&quot;1.49&quot; offset=&quot;0&quot; rangeMin=&quot;0&quot; rangeMax=&quot;-3.40282346638529e+38&quot; /&gt;
+    &lt;/PowerLaws&gt;
+    &lt;Options doPeel=&quot;1&quot; numberOfExtends=&quot;3&quot; minValue=&quot;0&quot; /&gt;
+&lt;/MaterialMapping&gt;
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <input type="checkbox" id="q12">
+                        <label for="q12">Can i load a calibration from a file?</label>
+                        <div class="faq-content">
+                            <p>Yes, you can provide a partially defined .matmap file including only the calibration element: </p>
+                            <div class="code-snippet">
+                                <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;MaterialMapping Version=&quot;2016.2&quot;&gt;
+    &lt;Calibration unit=&quot;mgHA/cm&#179;&quot;&gt;
+        &lt;DataPoint HU=&quot;1.79&quot; rho=&quot;0&quot; /&gt;
+        &lt;DataPoint HU=&quot;88.200000000000003&quot; rho=&quot;75&quot; /&gt;
+        &lt;DataPoint HU=&quot;174.360000000000014&quot; rho=&quot;150&quot; /&gt;
+    &lt;/Calibration&gt;
+&lt;/MaterialMapping&gt;
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <input type="checkbox" id="q4">
+                        <label for="q4">What does the 'Required Memory' field in the Graphcut3D plugin mean?</label>
                         <div class="faq-content">
                             <p>The graphcut algorithm requires large amounts of memory to build the necessary graph. This field tells you exactly how much memory the graph and the image data will allocate. It is highly recommended that you have at least this much free memory before starting the computation. If you do not have enough memory, see FAQ Section "I have less memory than 'Required memory'" for workarounds. </p>
                         </div>
                     </div>
                     <div class="faq">
-                        <input type="checkbox" id="q4">
-                        <label for="q4">I have less memory than 'Required memory'.</label>
+                        <input type="checkbox" id="q5">
+                        <label for="q5">I have less memory than 'Required memory'.</label>
                         <div class="faq-content">
                         <p>Not having enough memory will increase the computation time drastically and can even result in a crash of the application. Options at this point are: </p>
                             <ul>
@@ -236,22 +300,22 @@
                         </div>
                     </div>
                     <div class="faq">
-                        <input type="checkbox" id="q5">
-                        <label for="q5">The Graphcut3D plugin takes very long for its computation.</label>
+                        <input type="checkbox" id="q6">
+                        <label for="q6">The Graphcut3D plugin takes very long for its computation.</label>
                         <div class="faq-content">
                             <p>The 'estimated time' is based on test results on one of our machines. Depending on your hardware, your results may vary. Especially if your machine is not able to store the complete graph in memory, the computation time will increase dramatically.</p>
                         </div>
                     </div>
                     <div class="faq">
-                        <input type="checkbox" id="q6">
-                        <label for="q6">The application crashes when i click 'Start' in the Graphcut3D plugin.</label>
+                        <input type="checkbox" id="q7">
+                        <label for="q7">The application crashes when i click 'Start' in the Graphcut3D plugin.</label>
                         <div class="faq-content">
                             <p>This is a problem when the plugin tries to allocate more memory than your machine can handle. Please refer to the FAQ section "I have less memory than 'Required memory'" for information on how to decrease the memory usage.</p>
                         </div>
                     </div>
                     <div class="faq">
-                        <input type="checkbox" id="q7">
-                        <label for="q7">How do i use the Command Line Segmentation Tool?</label>
+                        <input type="checkbox" id="q8">
+                        <label for="q8">How do i use the Command Line Segmentation Tool?</label>
                         <div class="faq-content">
                             <p> The standalone application uses a command line interface (CLI) instead of a graphical user interface. Usage requires basic knowledge of your operating systems terminal enviroment.</p>
                         <ol class="justify-text">
@@ -281,22 +345,22 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
                         </div>
                     </div>
                     <div class="faq">
-                        <input type="checkbox" id="q8">
-                        <label for="q8">I have problems building the application from the source code.</label>
+                        <input type="checkbox" id="q9">
+                        <label for="q9">I have problems building the application from the source code.</label>
                         <div class="faq-content">
                             <p>There's a seperate FAQ for building over <a href="https://github.com/araex/mitk-gem/blob/master/README.md">here</a>.</p>
                         </div>
                     </div>
                     <div class="faq">
-                        <input type="checkbox" id="q9">
-                        <label for="q9">When starting the tool, i get a "undefined symbol: _ZN19QAbstractProxyModel11setItemData" error.</label>
+                        <input type="checkbox" id="q10">
+                        <label for="q10">When starting the tool, i get a "undefined symbol: _ZN19QAbstractProxyModel11setItemData" error.</label>
                         <div class="faq-content">
                             <p>This error occurs on systems with a installed QT version older than 4.8. Please update your QT version.</p>
                         </div>
                     </div>
                     <div class="faq">
-                        <input type="checkbox" id="q10">
-                        <label for="q10">I can't see those sidebars shown in the screenshots and videos.</label>
+                        <input type="checkbox" id="q11">
+                        <label for="q11">I can't see those sidebars shown in the screenshots and videos.</label>
                         <div class="faq-content">
                             <p>You have to open the plugins by clicking on their icons: <img class="icon" src="img/graphcut.png" alt="Icon GraphCut Plugin"> and <img class="icon" src="img/segmentation.png" alt="Icon Segmentation Plugin">.</p>
                             <a href="img/Screenshot_full.png" data-lightbox="Screenshot_full" data-title="Overview">
