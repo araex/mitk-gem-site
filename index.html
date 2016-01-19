@@ -229,7 +229,19 @@
                                 <li>GraphCut3D: GPLv3 because of the used library <a href="https://pub.ist.ac.at/~vnk/software.html" class="extA">maxflow</a>.</li>
                                 <li>Volume Mesher: GPLv3 beaucse of the used library <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>.</li>
                             </ul>
-                            For more details, see the LICENSE.txt in the respective plugins source code folder.
+                            For more details, see the LICENSE.txt in the respective plugins source code folder.</p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <input type="checkbox" id="q14">
+                        <label for="q14">I get an Error: This application failed to start because it could not find or load the Qt platform plugin "xcb"</label>
+                        <div class="faq-content">
+                            <p>On linux, the enviroment variable QT_PLUGIN_PATH has to be set to point to the Qt5 plugins directory in order to start MITK-GEM. Example: </p>
+                            <div class="code-snippet">
+                                <pre>
+bash:~/$ export QT_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/qt5/plugins
+                                </pre>
+                            </div>
                         </div>
                     </div>
                     <div class="faq">
