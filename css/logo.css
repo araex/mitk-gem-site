@@ -1,11 +1,11 @@
 html {
-    color: #fff;
-    font: 17px/1.4 'Open Sans', sans-serif;
-    text-align: center;
+  color: #fff;
+  font: 17px/1.4 'Open Sans', sans-serif;
+  text-align: center;
 }
 
 .hiColor {
-    color: #4caf50;
+  color: #4caf50;
 }
 
 .lightColor {
@@ -19,12 +19,13 @@ html {
 }
 
 .site-logo {
-    float: left;
-    font-size: 250px;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 20px;
+  float: left;
+  font-size: 250px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 100px;
+  line-height: 100%;
 }
 
 .light {
