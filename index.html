@@ -83,7 +83,7 @@
                             <img src="img/Overview.png" alt="Workbench overview">
                         </a>
                         <ol class="justify-text">
-                            <li>The Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>contains contains all loaded data (images, surfaces, meshes) as well as the results produced by the plugins. You can also save your results from here by right clicking on them and selecting save.</li>
+                            <li>The Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>contains all loaded data (images, surfaces, meshes) as well as the results produced by the plugins. You can save your results from here by right clicking on them and selecting save.</li>
                             <li>The toolbar containing all available plugins. Open a plugin by clicking on it.</li>
                             <li>The view of the currently opened plugin.</li>
                         </ol>
@@ -107,6 +107,7 @@
                          <p class="no-video">To view this video, please install a browser that <a href="http://caniuse.com/#feat=video">supports HTML5 video.</a></p>
                         </video>
                     </div>
+                    <h1 class="hiColor">TODO: new video</h1>
                     <ol class="justify-text">
                         <li>Open the image you want to segment.</li>
                         <li>Switch to the Segmentation Plugin<span><img class="icon" src="img/segmentation.png" alt="Icon Segmentation Plugin"></span>and create a new mask for the background.</li>
@@ -136,6 +137,7 @@
                         <li>Adjust the settings to match your requirements. The default settings should give accurate results in most cases.</li>
                         <li>After pressing the "Generate surface" button, the mask will get processed and the resulting surface will be added to your Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>.
                       </ol>
+                      <p class="justify-text">Note: To generate a closed surface, make sure the mask does not extend to the border of the image. You can use the padding plugin<span><img class="icon" src="img/padding.png" alt="Icon Padding Plugin"></span>to add empty slices.</p>
                     </p>
                 </article>
 
@@ -143,13 +145,13 @@
                 <article>
                   <h2>Tetrahedral mesh generation</h2>
                   <p>
-                    <p class="justify-text">Using the Volume Mesher plugin, you can create tetrahedral meshes from surfaces. The meshing is done by the tool <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>. The results are represented as unstructured grids (.vtu). Visualization of unstructured grids is currently disabled, to inspect the results, use a tool such as <a href="http://www.paraview.org/" class="extA">paraview</a>.
+                    <p class="justify-text">Using the Volume Mesher plugin, you can create tetrahedral meshes from surfaces. The meshing is done by <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>. The results are represented as unstructured grids (.vtu). Visualization of unstructured grids is currently disabled, to inspect the results, use a tool such as <a href="http://www.paraview.org/" class="extA">paraview</a>.
                     </p>
                     <a href="img/screen_volumemesh.png" data-lightbox="tutorial" data-title="Tutorial">
                         <img src="img/screen_volumemesh.png" alt="Screenshot volume mesh generation" style="max-width: 534px">
                     </a>
                     <ol class="justify-text">
-                      <li>Load a surface mesh and select it with the drop down box.</li>
+                      <li>Load a surface mesh and select it with the drop down box. Make sure the surface is closed.</li>
                       <li>Since the volume mesher is a front end to <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>, so the settings directly correspond to the ones available in tetgen.</li>
                       <li>Press "Generate tetrahedral mesh" to start the process. The resulting unstructured grid will be stored in the Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. </li>
                     </ol>
@@ -170,6 +172,7 @@
                       <li>Enter the bone density calibration values for your phantom into the table. The calibration unit can be set using the dropdown box.
                         <br/>If you already know your equation for Bone density &rho;, you can disable the calibration using the "Phantom calibration for &rho;_ct" checkbox and enter it directly below.</li>
                         <li>Note that after the calibration <span class="hiColor">all steps will use gHA/cm³ regardless of your chosen calibration unit!</span> Conversion happens automatically if necessary.</li>
+                        <h1 class="hiColor">TODO: explain how to get calibrator values</h1>
                     </ol>
 
                     <a href="img/screen_calibration2.png" data-lightbox="tutorial" data-title="Tutorial">
@@ -177,7 +180,7 @@
                     </a>
                     <ol class="justify-text">
                       <li value="4">A linear equation for bone density &rho; will get fitted to your calibration using a least squares fitting technique. </li>
-                      <li>The final bone density value &rho; used for further steps is evaluated in 3 steps. For more information refer to <a href="#">TODO: ADD PAPER HERE</a></li>
+                      <li>The final bone density value &rho; used for further steps is evaluated in 3 steps. For more information refer to our <a href="https://simtk.org/project/xml/publications.xml/?group_id=1063" class="extA">simtk project</a>.</li>
                     </ol>
 
                     <a href="img/screen_calibration3.png" data-lightbox="tutorial" data-title="Tutorial">
@@ -187,8 +190,10 @@
                       <li value="6">Specify the power laws that should be applied to your bone density.</li>
                       <li>Using the "add" button, you can add additional power laws with a corresponding interval.</li>
                       <li>Press the "Start" button to start the material mapping. The resulting unstructured grid will have an additional point and cell array containing the material properties.</li>
+                      <li>Save the unstructured grid as .vtu (right click in data manager -> save as).</li>
+                      <li>Convert the unstructured grid to the FE model format of your choice. Some converter scripts are provided here.</li>
                     </ol>
-                    <h1 class="hiColor">TODO: better explanation</h1>
+                    <h1 class="hiColor">TODO: add link to converter scripts. update screenshots</h1>
                   </p>
                 </article>
 
@@ -201,7 +206,6 @@
             <div class="container">
                 <article>
                     <h2>Frequently Asked Questions</h2>
-                    <h1 class="hiColor">TODO: expand</h1>
                     <div class="faq">
                         <input type="checkbox" id="q1">
                         <label for="q1">Can i use this tool for diagnosis and treatment?</label>
@@ -213,7 +217,7 @@
                         <input type="checkbox" id="q2">
                         <label for="q2">Can i use this tool for my research?</label>
                         <div class="faq-content">
-                            <p>Yes, MITK-GEM is released under the GPLv3 license and you may use it under these terms. If you do use it, please <a href="https://simtk.org/project/xml/publications.xml/?group_id=1063">cite the paper</a>.</p>
+                            <p>Yes, MITK-GEM is released under the GPLv3 license and you may use it under these terms. If you do use it, please <a href="https://simtk.org/project/xml/publications.xml/?group_id=1063" class="extA">cite the paper</a>.</p>
                         </div>
                     </div>
                     <div class="faq">
@@ -390,41 +394,12 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
             <div class="container">
                 <article>
                     <h2>About</h2>
-                    <h1 class="hiColor">TODO: add content or link to simtk?</h1>
-                    <p class="justify-text">
-                        This tool was developed for a paper comparing interactive graph cut image segmenation with manual segmentation for creation of femur finite element models. The paper was submitted to CMBBE in November 2014.
+                    <p class="center-text">
+                        For further information and contact details please refer to our <a href="https://simtk.org/home/mitk-gem" class="extA">simtk project</a>.
                     </p>
-                </article>
-
-                <article>
-                    <h3>Abstract</h3>
-                    <p class="justify-text">
-                        In this study, we propose interactive graph cut image segmentation for fast creation of femur finite element (FE) models from clinical computed tomography scans for hip fracture prediction. Using a sample of 48 bone scans representing normal, osteopenic and osteoporotic subjects, the proximal femur was segmented using manual (gold standard) and graph cut segmentation. Segmentations were subsequently used to generate FE models in order to calculate overall stiffness and peak force in sideways fall simulations. Results show that with a reduction from 20 minutes to 2 minute interaction time, comparable FE results can be obtained. Average differences between segmentation methods of 0.21 mm were not significantly correlated with differences in FE derived stiffness (p = 0.18) but marginally correlated to differences in FE derived peak force (p = 0.05). We further found that changes in automatically assigned boundary conditions, as a consequence to small segmentation differences, were significantly correlated with FEA derived results. The proposed interactive graph cut segmentation tool is freely available online.
-                    </p>
-                </article>
-
-                <a class="anchor" id="contact"></a>
-                <article>
-                <h3>Contact</h3>
-                    <div class="grid">
-                        <div class="grid-cell">
-                            <h4>Corresponding author</h4>
-                            <p>
-                                Yves Pauchard
-                                <br/><a href="mailto:yves.pauchard@zhaw.ch">yves.pauchard@zhaw.ch</a>
-                            </p>
-                        </div>
-                        <div class="grid-cell">
-                        </div>
-                    </div>
                 </article>
             </div>
         </div> <!-- end section-about -->
-        <!-- <div class="site-footer" role="contentinfo">
-                <p>
-                    A project developed by the <a href="http://init.zhaw.ch/en/engineering/institutes-centres/institute-of-applied-information-technology/research-and-development/human-information-interaction/visual-computing-lab.html" class="hiColor">Visual Computing Lab</a> at the <a href="http://www.zhaw.ch/en.html" class="hiColor">Zurich University of Applied Sciences</a>.
-                </p>
-        </div> -->
 
     </body>
 </html>
