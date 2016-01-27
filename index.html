@@ -70,7 +70,7 @@
                     </p>
                     <ul class="justify-text">
                         <a href="#graphcut"><li>Interactive image segmentation with 3D Graphcuts<span><img class="icon" src="img/graphcut.png" alt="Icon GraphCut Plugin"></span>.</li></a>
-                        <a href="#surfacemesh"><li>Surface mesh generation<img class="icon" src="img/voxel2mesh.png" alt="Icon GraphCut Plugin"></span>.</li></a>
+                        <a href="#surfacemesh"><li>Surface mesh generation<img class="icon" src="img/voxel2mesh.png" alt="Icon SurfaceMesh Plugin"></span>.</li></a>
                         <a href="#volumemesh"><li>Tetrahedral mesh generation<img class="icon" src="img/volumemesh.png" alt="Icon GraphCut Plugin"></span>.</li></a>
                         <a href="#materialmapping"><li>Highly configurable material mapping procedure<img class="icon" src="img/materialmapping.png" alt="Icon GraphCut Plugin"></span>.</li></a>
                     </ul>
@@ -384,6 +384,17 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
                             </a>
                         </div>
                     </div>
+
+                    <div class="faq">
+                        <input type="checkbox" id="q15">
+                        <label for="q15">How to create a closed surface.</label>
+                        <div class="faq-content">
+                            <p>Because the surface mesher plugin<img class="icon" src="img/voxel2mesh.png" alt="Icon SurfaceMesh Plugin"></span> uses the marching cubes algorithm, it produces open meshes when the mask extends to the border of the image. One way to work around this is to add an empty slice using the padding plugin<span><img class="icon" src="img/padding.png" alt="Icon Padding Plugin"></span>.</p>
+
+                        </div>
+                    </div>
+
+                    
 
                 </article>
             </div>
