@@ -145,7 +145,7 @@
                 <article>
                   <h2>Tetrahedral mesh generation</h2>
                   <p>
-                    <p class="justify-text">Using the Volume Mesher plugin, you can create tetrahedral meshes from surfaces. The meshing is done by <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>. The results are represented as unstructured grids (.vtu). Visualization of unstructured grids is currently disabled, to inspect the results, use a tool such as <a href="http://www.paraview.org/" class="extA">paraview</a>.
+                    <p class="justify-text">Using the Volume Mesher plugin, you can create volumetric (tetrahedral) meshes from surfaces. The meshing is done by <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>. The results are represented as unstructured grids (.vtu). Visualization of unstructured grids is currently disabled, to inspect the results, use a tool such as <a href="http://www.paraview.org/" class="extA">paraview</a>.
                     </p>
                     <a href="img/screen_volumemesh.png" data-lightbox="tutorial" data-title="Tutorial">
                         <img src="img/screen_volumemesh.png" alt="Screenshot volume mesh generation" style="max-width: 534px">
@@ -162,7 +162,7 @@
                 <article>
                   <h2>Material mapping</h2>
                   <p>
-                    <p class="justify-text"><h2 class="hiColor">TODO: add description</h2>
+                    <p class="justify-text">The material mapping plugin determines for each node in a volumetric mesh the corresponding gray scale value in the image. Through a series of conversion steps, gray scale values in Hounsfield units are converted to bone density and finally to elastic modulus. The plugin supports this workflow and produces a volumetric mesh represented as an unstructured grid (.vtu) with elastic modulus assigned to each node and element.
                     </p>
                     <a href="img/screen_calibration.png" data-lightbox="tutorial" data-title="Tutorial">
                         <img src="img/screen_calibration.png" alt="Screenshot bone density calibration" style="max-width: 547px">
@@ -170,9 +170,9 @@
                     <ol class="justify-text">
                       <li>Load an unstructured grid and a grayscale image and select them with the drop down boxes.</li>
                       <li>Enter the bone density calibration values for your phantom into the table. The calibration unit can be set using the dropdown box.
+                        <br/>To obtain calibrator values, use the Measurement Plugin<span><img class="icon" src="img/measurement.png" alt="Icon Measurement Plugin"></span> to select a 2D region with in the calibrator and the Statistics Plugin <span><img class="icon" src="img/ImageStatistic_24.png" alt="Icon Statistics Plugin"></span> to determine the corresponding average value. Repeat for multiple slices along the calibrator and calculate average. Alternatively, a full segmentation in 3D of the calibrator with the can be obtained with the Segmentation Plugin <img class="icon" src="img/segmentation.png" alt="Icon Segmentation Plugin"> and the average value can be obtained by selecting image and calibrator mask and enabling the Statistics plugin.
                         <br/>If you already know your equation for Bone density &rho;, you can disable the calibration using the "Phantom calibration for &rho;_ct" checkbox and enter it directly below.</li>
                         <li>Note that after the calibration <span class="hiColor">all steps will use gHA/cm³ regardless of your chosen calibration unit!</span> Conversion happens automatically if necessary.</li>
-                        <h1 class="hiColor">TODO: explain how to get calibrator values</h1>
                     </ol>
 
                     <a href="img/screen_calibration2.png" data-lightbox="tutorial" data-title="Tutorial">
@@ -394,7 +394,7 @@ boundaryDirection:   0-&gt;bidirectional; 1-&gt;bright to dark; 2-&gt;dark to br
                         </div>
                     </div>
 
-                    
+
 
                 </article>
             </div>
