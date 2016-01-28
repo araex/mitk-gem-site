@@ -61,50 +61,6 @@
 }
 
 /*
- * Flexible multi-media embeds
- */
-
-.flex-embed {
-    background-color: #000;
-    box-shadow: 0 0 10px #000;
-    height: 0;
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-}
-
-.flex-embed video {
-    width: 100%;
-}
-
-.flex-embed a, /* required by IE 6/7 */
-.flex-embed iframe,
-.flex-embed img,
-.flex-embed embed,
-.flex-embed object {
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
-.flex-embed .play-btn {
-    background: url('../img/play-btn.png') no-repeat;
-    height: 77px;
-    left: 50%;
-    margin: -38px 0 0 -38px;
-    position: absolute;
-    top: 50%;
-    width: 77px;
-}
-
-.flex-embed:hover .play-btn {
-    opacity: .7;
-}
-
-/*
  * Clearfix: contain floats
  *
  * For modern browsers:
