@@ -161,7 +161,7 @@
                 <article>
                   <h2>Material mapping</h2>
                   <p>
-                    <p class="justify-text">The material mapping plugin determines for each node in a volumetric mesh the corresponding gray scale value in the image. Through a series of conversion steps, gray scale values in Hounsfield units are converted to bone density and finally to elastic modulus. The plugin supports this workflow and produces a volumetric mesh represented as an unstructured grid (.vtu) with elastic modulus assigned to each node and element.
+                    <p class="justify-text">The material mapping plugin is used to assign material properties to a volume mesh from image voxel values. The plugin determines for each node in a volumetric mesh the corresponding gray scale value in the image. Through a series of conversion steps, gray scale values in Hounsfield units are converted to bone density and finally to elastic modulus using a power law. The plugin supports this workflow and produces a volumetric mesh represented as an unstructured grid (.vtu) with elastic modulus assigned to each node and element. The unstructured grid can subsequently be converted to FE solver compatible formats using conversion scripts (examples provided). For more information refer to our <a href="https://simtk.org/project/xml/publications.xml/?group_id=1063" class="extA">paper</a>.
                     </p>
                     <a href="img/screen_calibration.png" data-lightbox="tutorial" data-title="Material mapping calibration">
                         <img src="img/screen_calibration.png" alt="Screenshot bone density calibration" style="max-width: 463px">
@@ -178,8 +178,8 @@
                         <img src="img/screen_calibration2.png" alt="Screenshot bone density calibration 2" style="max-width: 463px">
                     </a>
                     <ol class="justify-text">
-                      <li value="4">A linear equation for bone density &rho; will get fitted to your calibration using a least squares fitting technique. </li>
-                      <li>The final bone density value &rho; used for further steps is evaluated in 3 steps. For more information refer to our <a href="https://simtk.org/project/xml/publications.xml/?group_id=1063" class="extA">simtk project</a>.</li>
+                      <li value="4">A linear equation for bone mineral density &rho;_ct will get fitted to your calibration using a least squares fitting technique. </li>
+                      <li>The final bone density value &rho;_app used for further steps is obtained in 3 steps as reported in the literature: (1) HU -> &rho;_ct (2) &rho;_ct -> &rho;_ash  (3) &rho;_ash -> &rho;_app.</li>
                     </ol>
 
                     <a href="img/screen_calibration3.png" data-lightbox="tutorial" data-title="Material mapping power laws">
