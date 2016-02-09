@@ -162,7 +162,7 @@
                 <article>
                   <h2>Material mapping</h2>
                   <p>
-                    <p class="justify-text">The material mapping plugin is used to assign material properties to a volume mesh from image voxel values. The plugin determines for each node in a volumetric mesh the corresponding gray scale value in the image. Through a series of conversion steps, gray scale values in Hounsfield units are converted to bone density and finally to elastic modulus using a power law. The plugin supports this workflow and produces a volumetric mesh represented as an unstructured grid (.vtu) with elastic modulus assigned to each node and element. The unstructured grid can subsequently be converted to FE solver compatible formats using conversion scripts (examples provided). For more information refer to our <a href="https://simtk.org/project/xml/publications.xml/?group_id=1063" class="extA">paper</a>.
+                    <p class="justify-text">The material mapping plugin is used to assign material properties to a volume mesh from image voxel values. The plugin determines for each node in a volumetric mesh the corresponding gray scale value in the image. Through a series of conversion steps, gray scale values in Hounsfield units are converted to bone density and finally to elastic modulus using a power law. The plugin supports this workflow and produces a volumetric mesh represented as an unstructured grid (.vtu) with elastic modulus assigned to each node and element. The unstructured grid can subsequently be converted to FE solver compatible formats using conversion scripts (<a href="https://github.com/araex/mitk-gem/tree/master/Scripts" class="extA">examples</a> provided). For more information refer to our <a href="https://simtk.org/project/xml/publications.xml/?group_id=1063" class="extA">paper</a>.
                     </p>
                     <a href="img/screen_calibration.png" data-lightbox="tutorial" data-title="Material mapping calibration">
                         <img src="img/screen_calibration.png" alt="Screenshot bone density calibration" style="max-width: 463px">
@@ -191,9 +191,8 @@
                       <li>Using the "add" button, you can add additional power laws with a corresponding interval.</li>
                       <li>Press the "Start" button to start the material mapping. The resulting unstructured grid will have an additional point and cell array containing the material properties.</li>
                       <li>Save the unstructured grid as .vtu (right click in data manager -> save as).</li>
-                      <li>Convert the unstructured grid to the FE model format of your choice. Some converter scripts are provided here.</li>
+                      <li>Convert the unstructured grid to the FE model format of your choice. Some converter scripts are provided <a href="https://github.com/araex/mitk-gem/tree/master/Scripts" class="extA">here</a>.</li>
                     </ol>
-                    <h1 class="hiColor">TODO: add link to converter scripts.</h1>
                   </p>
                 </article>
 
