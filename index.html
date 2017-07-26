@@ -74,6 +74,9 @@
                         <a href="#volumemesh"><li>Tetrahedral mesh generation<img class="icon" src="img/volumemesh.png" alt="Icon GraphCut Plugin"></span>.</li></a>
                         <a href="#materialmapping"><li>Highly configurable material mapping procedure<img class="icon" src="img/materialmapping.png" alt="Icon GraphCut Plugin"></span>.</li></a>
                     </ul>
+
+                    <p class="justify-text">The complete workflow going from <a href="#pipeline"> MITK-GEM to Ansys</a> is demonstrated by extracting the proximal femur from a CT image and simulating a sideways fall.
+                    </p>
                 </article>
 
                 <article>
@@ -96,6 +99,35 @@
         <div class="site-section site-section-example">
             <div class="container">
                 <h1>Tutorials</h1>
+                <a class="anchor" id="pipeline"></a>
+                <article>
+                  <h2>MITK-GEM to Ansys</h2>
+                  <p>
+                    <div>
+                        <video controls width="100%" height="auto" poster="video/thumbnail_MITK-GEM-to-ANSYS.png">
+                         <source src="video/MITK-GEM-to-ANSYS.mp4">
+                         <p class="no-video">To view this video, please install a browser that <a href="http://caniuse.com/#feat=video">supports HTML5 video.</a></p>
+                        </video>
+                    </div>
+                    <p class="justify-text">This clip illustrates the generation of a Finite Element Model of a proximal human femur based on a CT image data. To re-create these results you need:
+                    </p>
+                    <ol class="justify-text">
+                        <li>CT image <a href="https://github.com/araex/mitk-gem-site/tree/gh-pages/tutorial_files" class="extA">input_cropped.nrrd</a>.</li>
+                        <li><a href="https://simtk.org/project/xml/downloads.xml?group_id=1063" class="extA">MITK-GEM</a> to generate a volumetric mesh with material properties from a CT image.</li>
+                        <li>Matlab conversion script <a href="https://github.com/araex/mitk-gem/tree/master/Scripts" class="extA">WriteAnsysInput.m</a> to convert volumetric mesh to Ansys input files.</li>
+                        <li>Ansys to run the FE analysis.</li>
+                    </ol>
+                    <p class="justify-text"> All outputs generated are available <a href="https://github.com/araex/mitk-gem-site/tree/gh-pages/tutorial_files" class="extA">here</a>.
+                    </p>
+                    <p class="justify-text"> The CT dataset does not contain a calibration phantom. Hounsfield unit values for different mgHA/cm3 densities entered are estimates and provide an approximate apparent bone density calibration only.
+                    </p>
+                    <p class="justify-text"> The clip demonstrates a method for assessing whole bone femoral strength in a sideways fall loading configuration based on linear elastic analysis and principal strain thresholds inspired by Bayraktar et al., JBM 37:27-35, 2004 and Schileo et al., JBM 47:3531-3538, 2014. It lacks validation, both against in-vitro strength measurements and cohort databases.
+                    </p>
+                    <p class="justify-text"> RESULTS FROM THIS MODEL CANNOT BE USED FOR DIAGNOSING, PREVENTING OR TREATING DISEASE.
+                    </p>
+                  </p>
+                </article>
+
                 <a class="anchor" id="graphcut"></a>
                 <article>
                   <h2>Graphcut segmentation</h2>
@@ -144,15 +176,19 @@
                 <article>
                   <h2>Tetrahedral mesh generation</h2>
                   <p>
-                    <p class="justify-text">Using the Volume Mesher plugin, you can create volumetric (tetrahedral) meshes from surfaces. The meshing is done by <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>. The results are represented as unstructured grids (.vtu).</p>
+                    <p class="justify-text">Using the Volume Mesher plugin, you can create volumetric (tetrahedral) meshes from surfaces. The meshing is done by either <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a> or <a href="http://www.cgal.org" class="extA">CGAL</a>. The results are represented as unstructured grids (.vtu).</p>
                     <p class="justify-text">Visualization of unstructured grids is currently disabled. To inspect the results, you can enable visualization with the UG Visualization Plugin<span><img class="icon" src="img/ugvisualization.png" alt="Icon UG Visualization Plugin"></span> or use a tool such as <a href="http://www.paraview.org/" class="extA">paraview</a>.
                     </p>
-                    <a href="img/screen_volumemesh.png" data-lightbox="tutorial" data-title="Volume mesher plugin">
-                        <img src="img/screen_volumemesh.png" alt="Screenshot volume mesh generation" style="max-width: 534px">
+                    <a href="img/screen_volumemesh_tetgen.png" data-lightbox="tutorial" data-title="Volume mesher plugin tetgen">
+                        <img src="img/screen_volumemesh_tetgen.png" alt="Screenshot volume mesh generation with tetgen" style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
                     </a>
+                    <a href="img/screen_volumemesh_cgal.png" data-lightbox="tutorial" data-title="Volume mesher plugin cgal">
+                        <img src="img/screen_volumemesh_cgal.png" alt="Screenshot volume mesh generation with CGAL" style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
+                    </a>
+                    <p style="clear: both;"></p>
                     <ol class="justify-text">
                       <li>Load a surface mesh and select it with the drop down box. Make sure the surface is closed.</li>
-                      <li>Since the volume mesher is a front end to <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a>, so the settings directly correspond to the ones available in tetgen.</li>
+                      <li>Since the volume mesher is a front end to either <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a> or <a href="http://www.cgal.org" class="extA">CGAL</a>, the settings directly correspond to the ones available in tetgen.</li>
                       <li>Press "Generate tetrahedral mesh" to start the process. The resulting unstructured grid will be stored in the Data Manager<span><img class="icon" src="img/datamanager.png" alt="Icon DataManager Plugin"></span>. </li>
                     </ol>
                   </p>
@@ -190,7 +226,7 @@
                       <li value="6">Specify the power laws that should be applied to your bone density.</li>
                       <li>Using the "add" button, you can add additional power laws with a corresponding interval.</li>
                       <li>Press the "Start" button to start the material mapping. The resulting unstructured grid will have an additional point and cell array containing the material properties.</li>
-                      <li>Save the unstructured grid as .vtu (right click in data manager -> save as).</li>
+                      <li>Save the unstructured grid as .txt (right click in data manager -> save as).</li>
                       <li>Convert the unstructured grid to the FE model format of your choice. Some converter scripts are provided <a href="https://github.com/araex/mitk-gem/tree/master/Scripts" class="extA">here</a>.</li>
                     </ol>
                   </p>
