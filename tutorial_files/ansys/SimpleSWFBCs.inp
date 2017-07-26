@@ -1,0 +1,23 @@
+allsel,all
+!***SELECTING the support nodes at the distal end***
+NSEL,S,EXT
+*GET,MinShaftZ,NODE,0,MNLOC,Z
+NSEL,R,LOC,Z,MinShaftZ-0.5,MinShaftZ+0.5
+CM,ContNodShaft,NODE
+D,ALL,UZ,0
+allsel,all
+!***SELECTING the support nodes at the femoral head***
+NSEL,S,EXT
+*GET,MinHeadX,NODE,0,MNLOC,X
+NSEL,R,LOC,X,MinHeadX-0.5,MinHeadX+5.0
+CM,ContNodHead,NODE
+D,ALL,UX,0
+allsel,all
+!***SELECTING the support nodes at the greater trochanter***
+NSEL,S,EXT
+*GET,MaxGTX,NODE,0,MXLOC,X
+NSEL,R,LOC,X,MaxGTX-5.0,MaxGTX+0.5
+CM,ContNodGT,NODE
+D,ALL,UX,-1.0
+D,ALL,UY,0.0
+allsel,all

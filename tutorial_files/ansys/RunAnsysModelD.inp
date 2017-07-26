@@ -1,0 +1,39 @@
+finish
+/CLEAR,ALL
+/PREP7
+*USE,AnsysMeshD.cdb
+*USE,MaterialPropsD.inp
+*USE,NodalTempsD.inp
+allsel,all
+eplot,all
+!**********FIRST LOADING STEP**********!
+!*** WE START by solving an initial step with no load but temperature
+!*** This results in no deformation but assigns the E-modulus to the nodes
+/SOLU
+ANTYPE,0
+TIME,1.0
+NSUBST,1,100,1	!No. of substeps, max, min
+OUTRES,ALL,-res
+RESCONTROL,DEFINE,ALL,LAST	!Write restart file for last substep of each load step
+allsel,all
+!*** SOLVE TEMPERATURE ONLY STEP
+SOLVE
+SAVE,,,,ALL
+PARSAV,ALL,Z_Params,parm		!Save parameters
+FINISH
+!**********SECOND LOADING STEP**********!
+!*** NOW WE START solving the main load case (displacements applied)
+/SOLU
+ANTYPE,0,REST,,,CONTINUE	!Restart at end of previous load step
+PARRES,NEW,Z_Params,parm	!Restore parameters lost from restart
+*USE,SimpleSWFBCs.inp
+TIME,2.0
+NSUBST,1,100,1	!No. of substeps, max, min
+OUTRES,ALL,-1		!Write all results to db (1 per load step)
+RESCONTROL,DEFINE,ALL,LAST	! Write restart file for last substep of each load step
+SOLVE
+SAVE,,,,ALL
+FINISH
+!**************************************!
+*USE,PlotModulusD.inp
+*USE,PostProcess.inp

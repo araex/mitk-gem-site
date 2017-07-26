@@ -1,0 +1,24 @@
+!DEFINING MATERIAL PROPERTIES
+max_NodeE = 
+max_NodeE = 24048.1066
+NNN = 
+NNN = 10
+tem = 
+*DIM,factor,array,NNN
+*SET,tem,-50000,10,2392,4735,7077,8000,8500,9000,max_NodeE,50000
+factor(1) = 1.0*10/max_NodeE
+factor(10) = 1.0*max_NodeE/max_NodeE
+*DO,i,2,NNN-1
+factor(i) = 1.0*tem(i)/max_NodeE
+*ENDDO
+!DEFINING MATERIAL PROPERTIES
+!DEFINING DATA TABLES
+*DO,i,1,NNN
+MPTEMP,i,tem(i)
+E1 = factor(i)*max_NodeE
+MPDATA,EX,1,,E1
+MPDATA,PRXY,1,,0.3
+*ENDDO
+!*---------------------------------------------
+ALLSEL,ALL
+/GOPR     !Enable output

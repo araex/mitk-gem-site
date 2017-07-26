@@ -1,0 +1,14 @@
+finish
+/CLEAR,ALL
+/PREP7
+*USE,AnsysMeshE.cdb
+*USE,MaterialPropsE.inp
+*USE,ShellMeshE.cdb
+*USE,ShellMaterialsE.inp
+*USE,PlotModulusE.inp
+*USE,SimpleSWFBCs.inp
+allsel,all
+eplot,all
+/SOLU
+SOLVE
+*USE,PostProcess.inp

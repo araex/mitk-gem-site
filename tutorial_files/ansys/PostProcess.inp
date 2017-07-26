@@ -1,0 +1,97 @@
+!***THIS IS JUST A SAMPLE Post Processing script***
+!***included here for demonstration purposes***
+/POST1
+allsel,all
+!FIND THE LOAD APPLIED at the GT
+CMSEL,S,ContNodGT
+nnn = 
+*GET,nnn,NODE,NUM,COUNT
+SET,LAST
+CMSEL,S,ContNodGT,NODE
+C=0
+dum =
+dum = 0
+*DO,j,1,nnn
+C=NDNEXT(C)
+*GET,dumX,NODE,C,RF,FX
+dum = dum + dumX
+*ENDDO
+RForceEP = 
+RForceEP = abs(dum)
+IgnoreRad = 
+IgnoreRad = 15
+NSEL,S,LOC,Z,MinShaftZ-IgnoreRad,MinShaftZ+IgnoreRad
+CM,UnselShaft,NODE
+NSEL,S,LOC,X,MinHeadX-IgnoreRad,MinHeadX+IgnoreRad
+CM,UnselFH,NODE
+NSEL,S,LOC,X,MaxGTX-IgnoreRad,MaxGTX+IgnoreRad
+CM,UnselGT,NODE
+NSEL,ALL
+NSEL,U,,,UnselShaft
+NSEL,U,,,UnselFH
+NSEL,U,,,UnselGT
+CM,PostProNodes,NODE
+!WE output the results of the last time step
+SET,LAST
+ESEL,S,ENAME,,187
+*GET,NE_bein,ELEM,NUM,COUNT
+ce =
+ce = 0
+ce = elnext(ce)
+pp = NELEM(ce,1)
+NSEL,S,,,pp
+*DO,i_bein,1,NE_bein
+p1 = NELEM(ce,1)
+p2 = NELEM(ce,2)
+p3 = NELEM(ce,3)
+p4 = NELEM(ce,4)
+NSEL,A,,,p1
+NSEL,A,,,p2
+NSEL,A,,,p3
+NSEL,A,,,p4
+ce = elnext(ce)
+*ENDDO
+!ALL cornernodes in the bone elements
+CM,horn_pkt,NODE
+!ALL external corner nodes
+NSEL,S,EXT
+NSEL,R,,,horn_pkt
+CM,ext_horn_pkt,NODE
+NSEL,U,,,UnselShaft
+NSEL,U,,,UnselFH
+NSEL,U,,,UnselGT
+CM,ext_horn_pkt_cropped,NODE
+NSEL,S,,,ext_horn_pkt_cropped
+*GET,n_ext,NODE,NUM,COUNT
+e_ext_out =
+*DIM,e_ext_out1,ARRAY,n_ext
+*DIM,e_ext_out3,ARRAY,n_ext
+*DIM,NodeNr,ARRAY,n_ext
+c_ext = 0
+*DO,i_ext,1,n_ext
+c_ext = NDNEXT(c_ext)
+NodeNr(i_ext) = c_ext
+*GET,dum1,node,c_ext,epto,1
+*GET,dum3,node,c_ext,epto,3
+e_ext_out1(i_ext) = dum1
+e_ext_out3(i_ext) = dum3
+*ENDDO
+*VSCFUN,maxEP1,MAX,e_ext_out1
+*VSCFUN,LOCmaxEP1,LMAX,e_ext_out1
+NodeMaxStrain = e_ext_out1(LOCmaxEP1)
+*VSCFUN,minEP3,MIN,e_ext_out3
+*VSCFUN,LOCminEP3,LMIN,e_ext_out3
+NodeMinStrain = e_ext_out3(LOCminEP3)
+WholeBoneStrength1 = 
+WholeBoneStrength3 = 
+WholeBoneStrength1 = RForceEP*0.0073/abs(maxEP1)
+WholeBoneStrength3 = RForceEP*0.0104/abs(minEP3)
+*IF,WholeBoneStrength1,GT,WholeBoneStrength3,THEN 
+WholeBoneStrength = WholeBoneStrength3
+*ELSE
+WholeBoneStrength = WholeBoneStrength1
+*ENDIF
+/EFACET,1
+/EDGE,1,0,45
+/GLINE,1,-1
+PLNSOL, EPTO,3, 0,1.0

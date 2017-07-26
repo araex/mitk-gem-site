@@ -1,0 +1,29 @@
+/POST1
+allsel,all
+set,last
+CMSEL,S,GemEls
+ETABLE,E,BFE,TEMP
+ETABLE,ELEMVOL,VOLU,
+!*  
+*get,ne,elem,num,count
+allsel,all
+el_nrs = 
+*DIM,el_nrs,array,ne
+c=0
+*DO,i,1,ne
+c=elnext(c)
+el_nrs(i) = c
+*ENDDO
+E_el = 
+el_volume = 
+*dim,E_el,array,ne
+*dim,el_volume,array,ne
+*VGET,E_el,ELEM, ,ETAB,E, ,2
+*VGET,el_volume,ELEM, ,ETAB,ELEMVOL, ,2
+*VOPER,dummy,E_el,MULT,el_volume, , ,
+*VSCFUN,el_t_vol,SUM,dummy
+*VSCFUN,volume_tot,SUM,el_volume
+*VSCFUN,E_mod_max,MAX,E_el
+*VSCFUN,E_ave,MEAN,E_el
+E_ave_vol = el_t_vol/volume_tot
+allsel,all

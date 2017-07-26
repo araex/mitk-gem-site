@@ -1,0 +1,33 @@
+/PREP7
+allsel,all
+CMSEL,S,GemEls
+BFDELE,ALL,ALL
+*get,ne,elem,num,count
+c = 0
+volume_tot = 
+volume_tot = 0
+el_t_vol = 
+el_t_vol = 0
+E_mod_max = 
+E_mod_max = 0
+el_nrs = 
+*DIM,el_nrs,array,ne
+E_el = 
+*DIM,E_el,array,ne
+*DO,i,1,ne
+c = elnext(c)
+*GET,mat_num,ELEM,c,ATTR,MAT
+*GET,E_mod,EX,mat_num,TEMP,0
+*IF,E_mod,GT,E_mod_max,THEN
+E_mod_max = E_mod
+*ENDIF
+*GET,el_volume,ELEM,c,VOLU,
+volume_tot = volume_tot+el_volume
+el_t_vol = el_t_vol+el_volume*E_mod
+BFE,c,TEMP,,E_mod
+el_nrs(i) = c
+E_el(i) = E_mod
+*ENDDO
+e_ave_vol = el_t_vol/volume_tot
+*VSCFUN,e_ave,MEAN,E_el
+allsel,all

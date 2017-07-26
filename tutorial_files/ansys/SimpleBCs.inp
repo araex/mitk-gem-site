@@ -1,0 +1,6 @@
+allsel,all
+Nsel,s,,,1
+D,all,UY,0.1
+Nsel,s,,,2,100
+D,all,all
+allsel,all
