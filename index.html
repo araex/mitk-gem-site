@@ -176,7 +176,7 @@
                 <article>
                   <h2>Tetrahedral mesh generation</h2>
                   <p>
-                    <p class="justify-text">Using the Volume Mesher plugin, you can create volumetric (tetrahedral) meshes from surfaces. The meshing is done by either <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a> or <a href="http://www.cgal.org" class="extA">CGAL</a>. The results are represented as unstructured grids (.vtu).</p>
+                    <p class="justify-text">Using the Volume Mesher plugin, you can create volumetric (10-node tetrahedral) meshes from surfaces. The meshing is done by either <a href="http://wias-berlin.de/software/tetgen/" class="extA">tetgen</a> or <a href="http://www.cgal.org" class="extA">CGAL</a>. The results are represented as unstructured grids (.vtu).</p>
                     <p class="justify-text">Visualization of unstructured grids is currently disabled. To inspect the results, you can enable visualization with the UG Visualization Plugin<span><img class="icon" src="img/ugvisualization.png" alt="Icon UG Visualization Plugin"></span> or use a tool such as <a href="http://www.paraview.org/" class="extA">paraview</a>.
                     </p>
                     <a href="img/screen_volumemesh_tetgen.png" data-lightbox="tutorial" data-title="Volume mesher plugin tetgen">
@@ -226,8 +226,8 @@
                       <li value="6">Specify the power laws that should be applied to your bone density.</li>
                       <li>Using the "add" button, you can add additional power laws with a corresponding interval.</li>
                       <li>Press the "Start" button to start the material mapping. The resulting unstructured grid will have an additional point and cell array containing the material properties.</li>
-                      <li>Save the unstructured grid as .txt (right click in data manager -> save as).</li>
-                      <li>Convert the unstructured grid to the FE model format of your choice. Some converter scripts are provided <a href="https://github.com/araex/mitk-gem/tree/master/Scripts" class="extA">here</a>.</li>
+                      <li>Save the unstructured grid as .txt or .vtu (right click in data manager -> save as).</li>
+                      <li>Convert the unstructured grid (.txt) to the FE model format of your choice. Some converter scripts are provided <a href="https://github.com/araex/mitk-gem/tree/master/Scripts" class="extA">here</a>.</li>
                     </ol>
                   </p>
                 </article>
